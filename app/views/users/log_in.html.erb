@@ -1,0 +1,22 @@
+<a href="/">Home Page</a>
+<a href="/users/profile">Profile</a>
+<h1>User Login</h1>
+
+  <div class="row">
+    <div class="ten columns offset-by-one">
+      <%= form_tag '/sessions', method: :post do %>
+
+        <%= label_tag :username %>
+        <%= text_field_tag :username %>
+
+        <%= label_tag :password %>
+        <%= password_field_tag :password %>
+
+        <%= submit_tag "Log In" %>
+
+
+    </div>
+  </div>
+<a href="/users/new">Sign Up!</a>
+
+<% end %>

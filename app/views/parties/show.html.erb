@@ -1,0 +1,14 @@
+<h2>Party Orders</h2>
+<% @party %>
+<% order = @orders.where party_id: @party.id %>
+<% order.each do |m| %>
+<ul>
+
+
+<li><%= m.menu.name %>, <%= m.menu.beverage %>, $<%= m.menu.price %></li>
+</ul>
+
+
+<% end %>
+
+<li><%= link_to "Take More Orders", new_order_path %></li>

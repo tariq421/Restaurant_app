@@ -1,0 +1,24 @@
+<%= link_to "Profile", profile_path %>
+<body class="order_pic">
+
+
+<h2>Add Order</h2>
+
+<%= form_for @order do |t| %>
+
+  <%= t.label :party_id %>
+  <%= t.select( :party_id, options_for_select(@parties.map {|party| [party.table_name, party.id]})) %>
+
+  <br>
+ <% @menus.each do |menu| %>
+  <%= label_tag(menu.id, "#{menu.name}, #{menu.beverage}, $#{menu.price}") %>
+  <%= check_box_tag("order[menus][]", menu.id) %>
+  <br>
+
+ <% end %>
+
+
+  <%= t.submit %>
+
+<% end %>
+</body>
